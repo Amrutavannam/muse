@@ -1,13 +1,261 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Muse</title>
-</head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MUSE — Where Ideas Become Reality</title>
+  <meta name="description" content="MUSE helps you capture ideas, organize projects, and build something extraordinary." />
 
+  <!-- Google Font: Poppins -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="../public/css/style.css"/>
+</head>
 <body>
 
-<h1>Welcome to Muse 🚀</h1>
-<p>Where ideas become reality.</p>
+  <!-- ============================================= -->
+  <!-- AMBIENT BACKGROUND: stars + drifting clouds     -->
+  <!-- lives behind every section, fixed to viewport   -->
+  <!-- ============================================= -->
+  <div class="sky-bg" aria-hidden="true">
+    <div class="stars-layer" id="starsLayer"></div>
+    <div class="cloud cloud--a"></div>
+    <div class="cloud cloud--b"></div>
+    <div class="cloud cloud--c"></div>
+    <div class="glow-orb glow-orb--1"></div>
+    <div class="glow-orb glow-orb--2"></div>
+  </div>
 
+  <!-- ============================================= -->
+  <!-- NAVBAR                                          -->
+  <!-- ============================================= -->
+  <header class="navbar" id="navbar">
+    <div class="navbar__inner">
+      <a href="#" class="logo" aria-label="MUSE home">
+        <!-- Sky-themed logo: crescent moon cradling a little star -->
+        <svg class="logo__mark" width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="17" cy="17" r="16" fill="url(#logoSky)" opacity="0.55"/>
+          <path d="M21.5 9.5c-4.7 0-8.5 3.8-8.5 8.5s3.8 8.5 8.5 8.5c1.6 0 3.1-.44 4.37-1.2-3.9-.5-6.87-3.84-6.87-7.8s2.97-7.3 6.87-7.8A8.46 8.46 0 0 0 21.5 9.5Z" fill="#C4B5FD"/>
+          <path d="M11.5 8.2l.65 1.55 1.55.65-1.55.65-.65 1.55-.65-1.55-1.55-.65 1.55-.65.65-1.55Z" fill="#F9A8D4"/>
+          <defs>
+            <radialGradient id="logoSky" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(17 17) rotate(90) scale(16)">
+              <stop stop-color="#A5B4FC"/>
+              <stop offset="1" stop-color="#A5B4FC" stop-opacity="0"/>
+            </radialGradient>
+          </defs>
+        </svg>
+        <span class="logo__text">MUSE</span>
+      </a>
+
+      <!-- Mobile nav toggle -->
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="nav-links" id="navLinks">
+        <a href="#home" class="nav-link">Home</a>
+        <a href="#features" class="nav-link">Features</a>
+        <a href="#about" class="nav-link">About</a>
+        <a href="#" class="nav-link">Login</a>
+        <a href="#" class="nav-link nav-link--cta">Sign Up</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- ============================================= -->
+    <!-- HERO SECTION                                    -->
+    <!-- ============================================= -->
+    <section class="hero" id="home">
+      <div class="hero__inner">
+
+        <!-- Hero copy -->
+        <div class="hero__text fade-in">
+          <p class="eyebrow">✨ a cozy home for your ideas</p>
+          <h1 class="hero__heading">Where Ideas<br>Become <span class="text-gradient">Reality.</span></h1>
+          <p class="hero__subtext">
+  Every great project starts with a single spark. Capture your ideas, shape them into projects, and watch them come to life.
+</p>
+          <div class="hero__actions">
+            <a href="#" class="btn btn--primary">Get Started</a>
+            <a href="#features" class="btn btn--ghost">Explore Features</a>
+          </div>
+        </div>
+
+        <!-- Hero illustration: hand-built with SVG + CSS, no stock art -->
+        <div class="hero__art fade-in" aria-hidden="true">
+
+          <!-- soft glowing circles behind everything -->
+          <div class="art-glow art-glow--purple"></div>
+          <div class="art-glow art-glow--blue"></div>
+
+          <!-- drifting clouds inside the scene -->
+          <div class="scene-cloud scene-cloud--1"></div>
+          <div class="scene-cloud scene-cloud--2"></div>
+
+          <!-- the moon, glowing softly -->
+          <svg class="scene-moon" width="150" height="150" viewBox="0 0 150 150" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <radialGradient id="moonBody" cx="0.35" cy="0.3" r="0.9">
+                <stop offset="0%" stop-color="#FFFDF6"/>
+                <stop offset="55%" stop-color="#F5EFFF"/>
+                <stop offset="100%" stop-color="#D8CCFB"/>
+              </radialGradient>
+            </defs>
+            <circle cx="75" cy="75" r="55" fill="url(#moonBody)"/>
+            <circle cx="58" cy="55" r="7" fill="#E4D9FA" opacity="0.7"/>
+            <circle cx="90" cy="95" r="10" fill="#E4D9FA" opacity="0.55"/>
+            <circle cx="98" cy="55" r="5" fill="#E4D9FA" opacity="0.6"/>
+            <!-- sleepy little face, keeps it cozy rather than cold -->
+            <path d="M63 78c2 3 5 3 7 0" stroke="#B9A6E0" stroke-width="2.2" stroke-linecap="round"/>
+            <path d="M83 78c2 3 5 3 7 0" stroke="#B9A6E0" stroke-width="2.2" stroke-linecap="round"/>
+            <path d="M69 90c3 2.5 9 2.5 12 0" stroke="#C9B8ED" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+
+          <!-- twinkling sparkles scattered through the scene -->
+          <span class="sparkle sparkle--1">✦</span>
+          <span class="sparkle sparkle--2">✦</span>
+          <span class="sparkle sparkle--3">✧</span>
+          <span class="sparkle sparkle--4">✦</span>
+          <span class="sparkle sparkle--5">✧</span>
+
+          <!-- floating little project cards -->
+          <div class="mini-card mini-card--1">
+            <span class="mini-card__dot" style="background:#F9A8D4"></span>
+            <span>Portfolio Concept</span>
+          </div>
+          <div class="mini-card mini-card--2">
+            <span class="mini-card__dot" style="background:#A5B4FC"></span>
+            <span>Hackathon Idea</span>
+          </div>
+          <div class="mini-card mini-card--3">
+            <span class="mini-card__dot" style="background:#C4B5FD"></span>
+            <span>3am idea 💭</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- scroll cue -->
+      <div class="scroll-cue" aria-hidden="true"><span></span></div>
+    </section>
+
+    <!-- ============================================= -->
+    <!-- FEATURES SECTION                                -->
+    <!-- ============================================= -->
+    <section class="features" id="features">
+      <div class="section-heading fade-in">
+        <p class="eyebrow">what MUSE gives you</p>
+        <h2>A gentle place to grow every idea</h2>
+      </div>
+
+      <div class="features__grid">
+        <article class="feature-card fade-in">
+          <div class="feature-card__icon">💡</div>
+          <h3>Save Ideas</h3>
+          <p>Never lose your next brilliant project.</p>
+        </article>
+
+        <article class="feature-card fade-in">
+          <div class="feature-card__icon">🚀</div>
+          <h3>Track Progress</h3>
+          <p>Keep every project organized beautifully.</p>
+        </article>
+
+        <article class="feature-card fade-in">
+          <div class="feature-card__icon">✨</div>
+          <h3>Build Dreams</h3>
+          <p>Transform ideas into finished products.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- ============================================= -->
+    <!-- ABOUT SECTION                                   -->
+    <!-- ============================================= -->
+    <section class="about" id="about">
+      <div class="about__inner">
+
+        <!-- small moon illustration -->
+        <div class="about__art fade-in" aria-hidden="true">
+          <svg width="180" height="180" viewBox="0 0 180 180" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="90" cy="90" r="80" fill="url(#aboutGlow)"/>
+            <circle cx="90" cy="90" r="46" fill="url(#aboutMoon)"/>
+            <circle cx="76" cy="76" r="6" fill="#E4D9FA" opacity="0.7"/>
+            <circle cx="104" cy="98" r="8" fill="#E4D9FA" opacity="0.55"/>
+            <span class="visually-hidden">Moon</span>
+            <defs>
+              <radialGradient id="aboutMoon" cx="0.35" cy="0.3" r="0.9">
+                <stop offset="0%" stop-color="#FFFDF6"/>
+                <stop offset="60%" stop-color="#F0E9FF"/>
+                <stop offset="100%" stop-color="#CFC1F7"/>
+              </radialGradient>
+              <radialGradient id="aboutGlow" cx="0.5" cy="0.5" r="0.5">
+                <stop offset="0%" stop-color="#C4B5FD" stop-opacity="0.35"/>
+                <stop offset="100%" stop-color="#C4B5FD" stop-opacity="0"/>
+              </radialGradient>
+            </defs>
+          </svg>
+        </div>
+
+        <div class="about__text fade-in">
+          <p class="eyebrow">about muse</p>
+          <h2>A quiet corner of the internet for your ideas to breathe</h2>
+          <p class="about__body">
+            MUSE is a full-stack space built for the nights when inspiration hits at 2am and the
+            mornings when you need a calm place to pick up where you left off. Jot down a spark,
+            shape it into a project, and watch it grow — one gentle step at a time, without the
+            noise of a typical productivity tool.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================= -->
+    <!-- CALL TO ACTION                                  -->
+    <!-- ============================================= -->
+    <section class="cta">
+      <div class="cta__card fade-in">
+        <span class="sparkle cta__sparkle--1">✦</span>
+        <span class="sparkle cta__sparkle--2">✧</span>
+        <h2>Ready to build your next masterpiece?</h2>
+        <a href="#" class="btn btn--primary btn--large">Create Your First Project</a>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============================================= -->
+  <!-- FOOTER                                          -->
+  <!-- ============================================= -->
+  <footer class="footer">
+    <div class="footer__stars" aria-hidden="true"></div>
+    <div class="footer__inner">
+      <div class="footer__brand">
+        <a href="#" class="logo logo--footer" aria-label="MUSE home">
+          <svg width="28" height="28" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="17" cy="17" r="16" fill="#A5B4FC" opacity="0.35"/>
+            <path d="M21.5 9.5c-4.7 0-8.5 3.8-8.5 8.5s3.8 8.5 8.5 8.5c1.6 0 3.1-.44 4.37-1.2-3.9-.5-6.87-3.84-6.87-7.8s2.97-7.3 6.87-7.8A8.46 8.46 0 0 0 21.5 9.5Z" fill="#C4B5FD"/>
+          </svg>
+          <span>MUSE</span>
+        </a>
+        <p>Where Ideas Become Reality.</p>
+      </div>
+
+      <div class="footer__stack">
+        <p class="footer__stack-title">Built using</p>
+        <ul class="footer__stack-list">
+          <li>HTML</li>
+          <li>CSS</li>
+          <li>JavaScript</li>
+          <li>Express</li>
+          <li>MySQL</li>
+        </ul>
+      </div>
+    </div>
+    <p class="footer__bottom">© <span id="year"></span> MUSE. Made for late-night dreamers.</p>
+  </footer>
+
+  <script src="../public/js/script.js"></script>
 </body>
 </html>
