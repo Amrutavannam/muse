@@ -1,15 +1,33 @@
-const loginForm = document.getElementById("loginForm");
+const form = document.getElementById("loginForm");
 
-loginForm.addEventListener("submit", function(event){
+form.addEventListener("submit", async (e) => {
 
-    event.preventDefault();
+    e.preventDefault();
 
     const email = document.getElementById("email").value;
-
     const password = document.getElementById("password").value;
 
-    console.log("Email:", email);
+    const response = await fetch("http://localhost:3000/login", {
 
-    console.log("Password:", password);
+        method: "POST",
+
+        headers: {
+            "Content-Type": "application/json"
+        },
+
+        body: JSON.stringify({
+            email,
+            password
+        })
+
+    });
+
+    const data = await response.json();
+
+    alert(data.message);
+
+    if (response.ok) {
+        window.location.href = "dashboard.html";
+    }
 
 });
