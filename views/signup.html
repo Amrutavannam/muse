@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup | MUSE</title>
+
+    <link rel="stylesheet" href="../public/css/style.css">
+<link rel="stylesheet" href="../public/css/login.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="sky-bg">
+    <div class="stars-layer" id="starsLayer"></div>
+    <div class="cloud cloud--a"></div>
+    <div class="cloud cloud--b"></div>
+    <div class="cloud cloud--c"></div>
+    <div class="glow-orb glow-orb--1"></div>
+    <div class="glow-orb glow-orb--2"></div>
+</div>
+    <main class="login-container">
+
+        <div class="login-card">
+
+            <a href="index.html" class="logo" aria-label="MUSE home">
+
+    <svg class="logo__mark"
+         width="34"
+         height="34"
+         viewBox="0 0 34 34"
+         fill="none"
+         xmlns="http://www.w3.org/2000/svg">
+
+        <circle cx="17" cy="17" r="16"
+                fill="url(#logoSky)"
+                opacity="0.55"/>
+
+        <path d="M21.5 9.5c-4.7 0-8.5 3.8-8.5 8.5s3.8 8.5 8.5 8.5c1.6 0 3.1-.44 4.37-1.2-3.9-.5-6.87-3.84-6.87-7.8s2.97-7.3 6.87-7.8A8.46 8.46 0 0 0 21.5 9.5Z"
+              fill="#C4B5FD"/>
+
+        <path d="M11.5 8.2l.65 1.55 1.55.65-1.55.65-.65 1.55-.65-1.55-1.55-.65 1.55-.65.65-1.55Z"
+              fill="#F9A8D4"/>
+
+        <defs>
+            <radialGradient id="logoSky"
+                cx="0"
+                cy="0"
+                r="1"
+                gradientUnits="userSpaceOnUse"
+                gradientTransform="translate(17 17) rotate(90) scale(16)">
+                <stop stop-color="#A5B4FC"/>
+                <stop offset="1"
+                      stop-color="#A5B4FC"
+                      stop-opacity="0"/>
+            </radialGradient>
+        </defs>
+
+    </svg>
+
+    <span class="logo__text">MUSE</span>
+
+</a>
+
+            <h2>
+    Create Your
+    <span class="text-gradient">Account.</span>
+</h2>
+            <p class="subtitle">
+                Continue building your ideas.
+            </p>
+
+            <form id="signupForm">
+                <div class="input-group">
+                    <label>Name</label>
+                    <input
+                        type="name"
+                        id="name"
+                        placeholder="Enter your name"
+                        required
+                    >
+                </div>
+                <div class="input-group">
+                    <label>Email</label>
+                    <input
+                        type="email"
+                        id="email"
+                        placeholder="Enter your email"
+                        required
+                    >
+                </div>
+
+                <div class="input-group">
+                    <label>Password</label>
+                    <input
+                        type="password"
+                        id="password"
+                        placeholder="Enter your password"
+                        required
+                    >
+                </div>
+                <div class="input-group">
+                    <label>Confirm Password</label>
+                    <input
+                        type="password"
+                        id="password"
+                        placeholder="Enter your password"
+                        required
+                    >
+                </div>
+                <button class="btn btn--primary">
+    Create Account
+</button>
+            </form>
+
+            <p class="signup-link">
+                Already have an account?
+
+                <a href="login.html">
+                    Login
+                </a>
+            </p>
+
+        </div>
+
+    </main>
+
+<script src="../public/js/script.js"></script>
+<script src="../public/js/signup.js"></script>
+
+</body>
+</html>
