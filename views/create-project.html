@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Create Project | MUSE</title>
+
+    <link rel="stylesheet" href="../public/css/style.css">
+    <link rel="stylesheet" href="../public/css/create-project.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+<div class="sky-bg">
+    <div class="stars-layer" id="starsLayer"></div>
+
+    <div class="cloud cloud--a"></div>
+    <div class="cloud cloud--b"></div>
+    <div class="cloud cloud--c"></div>
+
+    <div class="glow-orb glow-orb--1"></div>
+    <div class="glow-orb glow-orb--2"></div>
+</div>
+
+<main class="project-page">
+
+<div class="project-card">
+
+<a href="dashboard.html" class="logo">
+
+<svg class="logo__mark"
+width="34"
+height="34"
+viewBox="0 0 34 34"
+fill="none"
+xmlns="http://www.w3.org/2000/svg">
+
+<circle cx="17" cy="17" r="16"
+fill="url(#logoSky)"
+opacity=".55"/>
+
+<path d="M21.5 9.5c-4.7 0-8.5 3.8-8.5 8.5s3.8 8.5 8.5 8.5c1.6 0 3.1-.44 4.37-1.2-3.9-.5-6.87-3.84-6.87-7.8s2.97-7.3 6.87-7.8A8.46 8.46 0 0 0 21.5 9.5Z"
+fill="#C4B5FD"/>
+
+<path d="M11.5 8.2l.65 1.55 1.55.65-1.55.65-.65 1.55-.65-1.55-1.55-.65 1.55-.65.65-1.55Z"
+fill="#F9A8D4"/>
+
+<defs>
+<radialGradient id="logoSky"
+cx="0"
+cy="0"
+r="1"
+gradientUnits="userSpaceOnUse"
+gradientTransform="translate(17 17) rotate(90) scale(16)">
+<stop stop-color="#A5B4FC"/>
+<stop offset="1"
+stop-color="#A5B4FC"
+stop-opacity="0"/>
+</radialGradient>
+</defs>
+
+</svg>
+
+<span class="logo__text">MUSE</span>
+
+</a>
+
+<h1>
+Start a New
+<span class="text-gradient">Dream.</span>
+</h1>
+
+<p class="subtitle">
+Every masterpiece begins with a single thought.
+Capture it before it disappears.
+</p>
+
+<form id="projectForm">
+
+<div class="input-group">
+
+<label>Project Title</label>
+
+<input
+type="text"
+id="title"
+placeholder="Give your idea a name">
+
+</div>
+
+<div class="input-group">
+
+<label>One-line Vision</label>
+
+<input
+type="text"
+id="vision"
+placeholder="One sentence describing your project">
+
+</div>
+
+<div class="input-group">
+
+<label>Your Thoughts</label>
+
+<textarea
+id="thoughts"
+rows="8"
+placeholder="What's your idea?
+
+What inspired it?
+
+How do you imagine it?
+
+Write everything here..."></textarea>
+
+</div>
+
+<h3>Where are you now?</h3>
+
+<div class="status-grid" id="statusGrid">
+
+    <div class="status-card active" data-status="Idea">
+        🌙
+        <p>Just an Idea</p>
+    </div>
+
+    <div class="status-card" data-status="Planning">
+        📋
+        <p>Planning</p>
+    </div>
+
+    <div class="status-card" data-status="Building">
+        ⚡
+        <p>Building</p>
+    </div>
+
+    <div class="status-card" data-status="Completed">
+        🎉
+        <p>Completed</p>
+    </div>
+
+</div>
+
+<h3>🔗 References</h3>
+
+<div class="input-group">
+    <label>GitHub Repository (Optional)</label>
+    <input
+        type="url"
+        id="github"
+        placeholder="https://github.com/username/project">
+</div>
+
+<div class="input-group">
+    <label>Helpful Links (Optional)</label>
+    <input
+        type="url"
+        id="reference"
+        placeholder="Articles, APIs, YouTube videos, docs...">
+</div>
+
+<div class="upload-box" id="uploadBox">
+
+    <input
+        type="file"
+        id="coverImage"
+        accept="image/*"
+        hidden>
+
+    <div class="upload-content">
+
+        📸
+
+        <h3>Give your project a face.</h3>
+
+        <p>
+
+            Click here to choose a cover image.
+
+            <br><br>
+
+            PNG • JPG • JPEG
+
+        </p>
+
+    </div>
+
+</div>
+<h3>Project Type</h3>
+
+<div class="type-grid" id="typeGrid">
+
+    <div class="status-card active" data-type="Personal">
+        👤
+        <p>Personal</p>
+    </div>
+
+    <div class="status-card" data-type="Team">
+        👥
+        <p>Team</p>
+    </div>
+
+</div>
+
+<button
+type="submit"
+class="btn btn--primary">
+
+✨ Save to MUSE
+
+</button>
+</form>
+
+</div>
+
+</main>
+
+<script src="../public/js/script.js"></script>
+<script src="../public/js/create-project.js"></script>
+
+</body>
+</html>

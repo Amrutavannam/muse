@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>MUSE Dashboard</title>
+
+    <link rel="stylesheet" href="../public/css/style.css">
+    <link rel="stylesheet" href="../public/css/dashboard.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<!-- Background -->
+
+<div class="sky-bg">
+
+    <div class="stars-layer" id="starsLayer"></div>
+
+    <div class="cloud cloud--a"></div>
+    <div class="cloud cloud--b"></div>
+    <div class="cloud cloud--c"></div>
+
+    <div class="glow-orb glow-orb--1"></div>
+    <div class="glow-orb glow-orb--2"></div>
+
+</div>
+
+
+<!-- Navbar -->
+
+<header class="navbar">
+
+<div class="navbar__inner">
+
+<a href="index.html" class="logo">
+
+<svg class="logo__mark" width="34" height="34" viewBox="0 0 34 34" fill="none">
+
+<circle cx="17" cy="17" r="16" fill="url(#logoSky)" opacity=".55"/>
+
+<path d="M21.5 9.5c-4.7 0-8.5 3.8-8.5 8.5s3.8 8.5 8.5 8.5c1.6 0 3.1-.44 4.37-1.2-3.9-.5-6.87-3.84-6.87-7.8s2.97-7.3 6.87-7.8A8.46 8.46 0 0 0 21.5 9.5Z" fill="#C4B5FD"/>
+
+<defs>
+
+<radialGradient id="logoSky">
+
+<stop stop-color="#A5B4FC"/>
+
+<stop offset="1" stop-color="#A5B4FC" stop-opacity="0"/>
+
+</radialGradient>
+
+</defs>
+
+</svg>
+
+<span class="logo__text">MUSE</span>
+
+</a>
+
+<button class="btn btn--ghost" id="logoutBtn">
+Logout
+</button>
+
+</div>
+
+</header>
+
+
+<main class="dashboard">
+
+<section class="hero-card fade-in">
+
+<p class="eyebrow">Welcome Back</p>
+
+<h1>
+Hello,
+<span class="text-gradient" id="userName">
+Dreamer
+</span>
+👋
+</h1>
+
+<p>
+Continue building your ideas today.
+</p>
+
+</section>
+
+
+
+<section class="dashboard-grid">
+
+<div class="glass-card">
+
+<h2>👤 Profile</h2>
+
+<p><strong>Name:</strong></p>
+
+<p id="profileName">Loading...</p>
+
+<br>
+
+<p><strong>Email:</strong></p>
+
+<p id="profileEmail">Loading...</p>
+
+</div>
+
+
+
+<div class="glass-card">
+
+<h2>📊 Quick Stats</h2>
+
+<p>Projects : <strong>0</strong></p>
+
+<p>Ideas : <strong>0</strong></p>
+
+<p>Completed : <strong>0</strong></p>
+
+</div>
+
+</section>
+
+
+
+<section class="glass-card projects">
+
+    <div class="projects-header">
+
+        <h2>📁 My Dreams</h2>
+
+        <a href="create-project.html" class="btn btn--primary">
+
+            + Create Project
+
+        </a>
+
+    </div>
+
+    <div id="projectsContainer">
+
+    </div>
+
+</section>
+
+</main>
+
+
+<script src="../public/js/script.js"></script>
+<script src="../public/js/dashboard.js"></script>
+
+</body>
+</html>

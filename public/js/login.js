@@ -27,6 +27,7 @@ form.addEventListener("submit", async (e) => {
     alert(data.message);
 
     if (response.ok) {
+        localStorage.setItem("userEmail", email);
         window.location.href = "dashboard.html";
     }
 

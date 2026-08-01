@@ -1,0 +1,297 @@
+/* ==========================================
+   Create Project
+========================================== */
+
+.project-page{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:120px 20px 60px;
+}
+
+.project-card{
+
+    width:100%;
+    max-width:900px;
+
+    background:rgba(255,255,255,.05);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    backdrop-filter:blur(18px);
+
+    border-radius:30px;
+
+    padding:55px;
+
+    box-shadow:0 20px 50px rgba(0,0,0,.35);
+
+}
+
+.project-card h1{
+
+    font-size:3rem;
+
+    margin-top:25px;
+
+    margin-bottom:15px;
+
+}
+
+.subtitle{
+
+    color:var(--text-secondary);
+
+    max-width:600px;
+
+    margin-bottom:45px;
+
+    line-height:1.8;
+
+}
+
+/* ---------------- Inputs ---------------- */
+
+.input-group{
+
+    display:flex;
+
+    flex-direction:column;
+
+    margin-bottom:28px;
+
+}
+
+.input-group label{
+
+    font-weight:600;
+
+    margin-bottom:12px;
+
+    color:white;
+
+}
+
+.input-group input,
+.input-group textarea{
+
+    width:100%;
+
+    padding:18px;
+
+    border-radius:18px;
+
+    border:1px solid rgba(255,255,255,.08);
+
+    background:rgba(255,255,255,.06);
+
+    color:white;
+
+    font-size:1rem;
+
+    outline:none;
+
+    transition:.3s;
+
+}
+
+.input-group textarea{
+
+    resize:vertical;
+
+    min-height:220px;
+
+}
+
+.input-group input:focus,
+.input-group textarea:focus{
+
+    border-color:#A5B4FC;
+
+    box-shadow:0 0 20px rgba(165,180,252,.18);
+
+}
+
+.input-group input::placeholder,
+.input-group textarea::placeholder{
+
+    color:#94A3B8;
+
+}
+
+/* ---------------- Titles ---------------- */
+
+.project-card h3{
+
+    margin:40px 0 20px;
+
+    font-size:1.3rem;
+
+    color:white;
+
+}
+
+/* ---------------- Status Cards ---------------- */
+
+.status-grid{
+
+display:grid;
+
+grid-template-columns:repeat(4,1fr);
+
+gap:18px;
+
+margin-bottom:40px;
+
+}
+
+.status-card{
+
+    background:rgba(255,255,255,.05);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:18px;
+
+    padding:22px;
+
+    text-align:center;
+
+    cursor:pointer;
+
+    transition:.35s;
+
+}
+
+.status-card:hover{
+
+    transform:translateY(-6px);
+
+    border-color:#A5B4FC;
+
+    box-shadow:0 15px 35px rgba(165,180,252,.18);
+
+}
+
+.status-card p{
+
+    margin-top:12px;
+
+    font-weight:600;
+
+}
+.type-grid{
+
+display:grid;
+
+grid-template-columns:repeat(2,1fr);
+
+gap:18px;
+
+margin-bottom:40px;
+
+}
+/* selected card */
+
+.status-card.active{
+
+    background:linear-gradient(
+    135deg,
+    rgba(196,181,253,.35),
+    rgba(165,180,252,.2));
+
+    border-color:#C4B5FD;
+
+}
+
+/* ---------------- Upload ---------------- */
+
+.upload-box{
+
+    border:2px dashed rgba(255,255,255,.15);
+
+    border-radius:24px;
+
+    padding:50px;
+
+    text-align:center;
+
+    margin:45px 0;
+
+    transition:.3s;
+
+}
+
+.upload-box:hover{
+
+    border-color:#A5B4FC;
+
+    background:rgba(255,255,255,.04);
+
+}
+
+.upload-box h3{
+
+    margin-top:15px;
+
+}
+
+.upload-box p{
+
+    color:var(--text-secondary);
+
+}
+
+/* ---------------- Button ---------------- */
+
+button{
+
+    width:100%;
+
+    margin-top:20px;
+
+}
+
+/* ---------------- Mobile ---------------- */
+
+@media(max-width:768px){
+
+.project-card{
+
+padding:35px;
+
+}
+
+.project-card h1{
+
+font-size:2.2rem;
+
+}
+
+.status-grid{
+
+grid-template-columns:1fr;
+
+}
+
+}
+.upload-box{
+
+cursor:pointer;
+
+}
+
+.upload-box.selected{
+
+border-color:#A5B4FC;
+
+background:rgba(165,180,252,.08);
+
+}
+
+.upload-content{
+
+pointer-events:none;
+
+}

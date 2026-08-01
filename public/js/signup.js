@@ -35,13 +35,21 @@ signupForm.addEventListener("submit", async (event) => {
 
         const data = await response.json();
 
-        alert(data.message);
+if (response.ok) {
 
-        // Clear form
-        signupForm.reset();
+    localStorage.setItem("userEmail", email);
 
-        // Later we'll redirect automatically
-        // window.location.href = "login.html";
+    alert(data.message);
+
+    signupForm.reset();
+
+    window.location.href = "dashboard.html";
+
+} else {
+
+    alert(data.message);
+
+}
 
     } catch (error) {
 

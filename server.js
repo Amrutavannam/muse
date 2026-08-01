@@ -114,6 +114,145 @@ app.post("/login", (req, res) => {
     );
 
 });
+//project
+app.post("/projects", (req, res) => {
+
+    const {
+        user_email,
+        title,
+        vision,
+        thoughts,
+        status,
+        project_type,
+        github,
+        reference_link
+    } = req.body;
+
+    db.query(
+        `INSERT INTO projects
+        (user_email,title,vision,thoughts,status,project_type,github,reference_link)
+        VALUES (?,?,?,?,?,?,?,?)`,
+        [
+            user_email,
+            title,
+            vision,
+            thoughts,
+            status,
+            project_type,
+            github,
+            reference_link
+        ],
+        (err) => {
+
+            if (err) {
+                console.log(err);
+                return res.status(500).json({
+                    message: "Couldn't save project"
+                });
+            }
+
+            res.json({
+                message: "Project saved successfully!"
+            });
+
+        }
+    );
+
+});
+//projects
+app.get("/projects/:email",(req,res)=>{
+
+    const email=req.params.email;
+
+    db.query(
+
+        "SELECT * FROM projects WHERE user_email=? ORDER BY created_at DESC",
+
+        [email],
+
+        (err,result)=>{
+
+            if(err){
+
+                return res.status(500).json({
+                    message:"Database Error"
+                });
+
+            }
+
+            res.json(result);
+
+        }
+
+    );
+
+});
+//profile route 
+app.post("/profile", (req, res) => {
+
+    const { email } = req.body;
+
+    db.query(
+        "SELECT fullname,email FROM users WHERE email = ?",
+        [email],
+        (err, result) => {
+
+            if (err) {
+
+                return res.status(500).json({
+                    message: "Database Error"
+                });
+
+            }
+
+            if (result.length === 0) {
+
+                return res.status(404).json({
+                    message: "User Not Found"
+                });
+
+            }
+
+            res.json(result[0]);
+
+        }
+    );
+
+});
+//create project route 
+app.post("/create-project",(req,res)=>{
+
+const {user_email,title,description,status}=req.body;
+
+db.query(
+
+"INSERT INTO projects(user_email,title,description,status) VALUES(?,?,?,?)",
+
+[user_email,title,description,status],
+
+(err)=>{
+
+if(err){
+
+return res.status(500).json({
+
+message:"Failed"
+
+});
+
+}
+
+res.json({
+
+message:"Project Created Successfully"
+
+});
+
+}
+
+);
+
+});
 // Start Server
 app.listen(3000, () => {
     console.log("Server running on http://localhost:3000");
