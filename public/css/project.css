@@ -130,3 +130,22 @@ button{
     margin-top:20px;
 
 }
+.btn--danger{
+
+    width:100%;
+
+    margin-top:18px;
+
+    background:#ef4444;
+
+    color:white;
+
+}
+
+.btn--danger:hover{
+
+    background:#dc2626;
+
+    transform:translateY(-3px);
+
+}

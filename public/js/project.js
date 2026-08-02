@@ -70,3 +70,32 @@ form.addEventListener("submit", async (e)=>{
     alert(data.message);
 
 });
+const deleteBtn = document.getElementById("deleteBtn");
+
+deleteBtn.addEventListener("click", async () => {
+
+    const confirmDelete = confirm(
+        "Are you sure you want to delete this project?"
+    );
+
+    if (!confirmDelete) return;
+
+    const response = await fetch(
+
+        `http://localhost:3000/project/${projectId}`,
+
+        {
+
+            method: "DELETE"
+
+        }
+
+    );
+
+    const data = await response.json();
+
+    alert(data.message);
+
+    window.location.href = "dashboard.html";
+
+});
