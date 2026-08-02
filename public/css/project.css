@@ -1,0 +1,132 @@
+/* ==========================================
+   Project Workspace
+========================================== */
+
+.project-page{
+
+    min-height:100vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    padding:100px 20px;
+
+}
+
+.project-card{
+
+    width:100%;
+    max-width:900px;
+
+    background:rgba(255,255,255,.05);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:28px;
+
+    backdrop-filter:blur(18px);
+
+    padding:50px;
+
+    box-shadow:0 20px 50px rgba(0,0,0,.35);
+
+}
+
+.back-link{
+
+    color:#C4B5FD;
+
+    text-decoration:none;
+
+    font-weight:600;
+
+}
+
+.back-link:hover{
+
+    color:white;
+
+}
+
+.project-card h1{
+
+    margin-top:25px;
+
+    margin-bottom:10px;
+
+    font-size:2.8rem;
+
+}
+
+.subtitle{
+
+    color:#CBD5E1;
+
+    margin-bottom:40px;
+
+}
+
+.input-group{
+
+    display:flex;
+
+    flex-direction:column;
+
+    margin-bottom:24px;
+
+}
+
+.input-group label{
+
+    margin-bottom:10px;
+
+    font-weight:600;
+
+}
+
+.input-group input,
+.input-group textarea{
+
+    padding:18px;
+
+    border-radius:16px;
+
+    border:1px solid rgba(255,255,255,.08);
+
+    background:rgba(255,255,255,.06);
+
+    color:white;
+
+    outline:none;
+
+    transition:.3s;
+
+}
+
+.input-group textarea{
+
+    resize:vertical;
+
+    min-height:220px;
+
+}
+
+.input-group input:focus,
+.input-group textarea:focus{
+
+    border-color:#A5B4FC;
+
+    box-shadow:0 0 20px rgba(165,180,252,.2);
+
+}
+
+button{
+
+    width:100%;
+
+    margin-top:20px;
+
+}

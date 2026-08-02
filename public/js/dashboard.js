@@ -15,27 +15,44 @@ async function loadProjects() {
     projects.forEach(project => {
 
         container.innerHTML += `
-        
-        <div class="project-card">
 
-            <h3>${project.title}</h3>
+<div
+class="project-card"
+onclick="editProject(${project.id})">
 
-            <p>${project.vision}</p>
+    <h3>🌙 ${project.title}</h3>
 
-            <span>${project.status}</span>
+    <p>${project.vision}</p>
 
-            <button onclick="editProject(${project.id})">
+    <div class="project-meta">
 
-                ✏ Edit
+        <span class="badge">
+        ${project.status}
+        </span>
 
-            </button>
+        <span class="badge">
+        ${project.project_type}
+        </span>
 
-        </div>
+    </div>
 
-        `;
+    <div class="continue">
 
-    });
+        Continue Building
+
+        <span>→</span>
+
+    </div>
+
+</div>
+
+`;
+
+}); 
+}
+loadProjects();
+function editProject(id){
+
+    window.location.href = `project.html?id=${id}`;
 
 }
-
-loadProjects();

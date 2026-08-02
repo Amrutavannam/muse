@@ -187,6 +187,97 @@ app.get("/projects/:email",(req,res)=>{
     );
 
 });
+//project to open from dashboard
+app.get("/project/:id", (req, res) => {
+
+    const id = req.params.id;
+
+    db.query(
+
+        "SELECT * FROM projects WHERE id = ?",
+
+        [id],
+
+        (err, result) => {
+
+            if (err) {
+
+                return res.status(500).json({
+                    message: "Database Error"
+                });
+
+            }
+
+            if (result.length === 0) {
+
+                return res.status(404).json({
+                    message: "Project not found"
+                });
+
+            }
+
+            res.json(result[0]);
+
+        }
+
+    );
+
+});
+//update route
+app.put("/project/:id", (req, res) => {
+
+    const id = req.params.id;
+
+    const {
+        title,
+        vision,
+        thoughts,
+        github,
+        reference_link
+    } = req.body;
+
+    db.query(
+
+        `UPDATE projects
+        SET
+        title=?,
+        vision=?,
+        thoughts=?,
+        github=?,
+        reference_link=?,
+        updated_at=NOW()
+        WHERE id=?`,
+
+        [
+            title,
+            vision,
+            thoughts,
+            github,
+            reference_link,
+            id
+        ],
+
+        (err) => {
+
+            if (err) {
+
+                console.log(err);
+
+                return res.status(500).json({
+                    message:"Update Failed"
+                });
+
+            }
+
+            res.json({
+                message:"Project Updated!"
+            });
+
+        }
+
+    );
+
+});
 //profile route 
 app.post("/profile", (req, res) => {
 
