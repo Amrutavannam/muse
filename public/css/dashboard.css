@@ -319,3 +319,48 @@ transition:.3s;
 font-size:1.2rem;
 
 }
+.search-section{
+
+    margin:25px 0;
+
+}
+
+.search-section input{
+
+    width:100%;
+
+    padding:16px 20px;
+
+    border:none;
+
+    outline:none;
+
+    border-radius:16px;
+
+    background:rgba(255,255,255,.06);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    color:white;
+
+    font-size:1rem;
+
+    backdrop-filter:blur(15px);
+
+    transition:.3s;
+
+}
+
+.search-section input::placeholder{
+
+    color:#94A3B8;
+
+}
+
+.search-section input:focus{
+
+    border-color:#A5B4FC;
+
+    box-shadow:0 0 18px rgba(165,180,252,.2);
+
+}
