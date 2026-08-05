@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Muse AI Test</title>
+</head>
+<body>
+
+    <h2>Test Muse AI</h2>
+
+    <textarea id="prompt" rows="6" cols="60"></textarea>
+
+    <br><br>
+
+    <button id="askAI">Ask AI</button>
+
+    <pre id="answer"></pre>
+
+    <script>
+
+        document.getElementById("askAI").addEventListener("click", async () => {
+
+            const prompt = document.getElementById("prompt").value;
+
+            const response = await fetch("http://localhost:3000/ai",{
+
+                method:"POST",
+
+                headers:{
+                    "Content-Type":"application/json"
+                },
+
+                body:JSON.stringify({prompt})
+
+            });
+
+            const data = await response.json();
+
+            document.getElementById("answer").textContent = data.reply;
+
+        });
+
+    </script>
+
+</body>
+</html>

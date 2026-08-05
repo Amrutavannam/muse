@@ -10,6 +10,8 @@ async function loadProject() {
 
     const project = await response.json();
 
+    window.currentProject = project;
+
     document.title = `${project.title} | MUSE`;
 
     document.querySelector("h1").innerHTML =
@@ -22,11 +24,10 @@ async function loadProject() {
     document.getElementById("reference").value = project.reference_link || "";
 
 }
-
 loadProject();
 const form = document.getElementById("editProjectForm");
 
-form.addEventListener("submit", async (e)=>{
+form.addEventListener("submit", async (e) => {
 
     e.preventDefault();
 
@@ -36,30 +37,25 @@ form.addEventListener("submit", async (e)=>{
 
         {
 
-            method:"PUT",
+            method: "PUT",
 
-            headers:{
-                "Content-Type":"application/json"
-            },
+        headers:{
+            "Content-Type":"application/json"
+        },
 
-            body:JSON.stringify({
+        body: JSON.stringify({
 
-                title:
-                document.getElementById("title").value,
+            title: document.getElementById("title").value,
 
-                vision:
-                document.getElementById("vision").value,
+            vision: document.getElementById("vision").value,
 
-                thoughts:
-                document.getElementById("thoughts").value,
+            thoughts: document.getElementById("thoughts").value,
 
-                github:
-                document.getElementById("github").value,
+            github: document.getElementById("github").value,
 
-                reference_link:
-                document.getElementById("reference").value
+            reference_link: document.getElementById("reference").value
 
-            })
+        })
 
         }
 
@@ -97,5 +93,46 @@ deleteBtn.addEventListener("click", async () => {
     alert(data.message);
 
     window.location.href = "dashboard.html";
+
+});
+document
+.getElementById("askAI")
+.addEventListener("click", async () => {
+
+    const prompt =
+        document.getElementById("aiPrompt").value;
+
+    const response = await fetch(
+        "http://localhost:3000/ai",
+        {
+
+            method:"POST",
+
+            headers:{
+                "Content-Type":"application/json"
+            },
+
+            body: JSON.stringify({
+
+    title: window.currentProject.title,
+
+    vision: window.currentProject.vision,
+
+    thoughts: window.currentProject.thoughts,
+
+    status: window.currentProject.status,
+
+    project_type: window.currentProject.project_type,
+
+    prompt
+
+})
+
+        });
+document.getElementById("aiResponse").innerHTML ="✨ Muse is thinking..."
+    const data = await response.json();
+
+    document.getElementById("aiResponse").innerHTML =
+data.reply;
 
 });

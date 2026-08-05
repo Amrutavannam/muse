@@ -134,3 +134,12 @@ searchInput.addEventListener("input", function () {
     });
 
 });
+const logoutBtn = document.getElementById("logoutBtn");
+
+logoutBtn.addEventListener("click", () => {
+
+    localStorage.removeItem("userEmail");
+
+    window.location.href = "index.html";
+
+});

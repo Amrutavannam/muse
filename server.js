@@ -1,3 +1,11 @@
+require("dotenv").config();
+
+const Groq = require("groq-sdk");
+
+const groq = new Groq({
+    apiKey: process.env.GROQ_API_KEY
+});
+
 const bcrypt = require("bcrypt");
 const express = require("express");
 const mysql = require("mysql2");
@@ -376,7 +384,89 @@ message:"Project Created Successfully"
 );
 
 });
+//ai route
+app.post("/ai", async (req, res) => {
+
+    try {
+
+        const {
+
+    title,
+
+    vision,
+
+    thoughts,
+
+    status,
+
+    project_type,
+
+    prompt
+
+} = req.body;
+
+        const completion = await groq.chat.completions.create({
+
+            model: "llama-3.3-70b-versatile",
+
+            messages: [
+
+                {
+                    role: "system",
+                    content:
+                        "You are Muse AI, a helpful software development assistant. Help users improve, design and build their software projects. Give practical coding advice."
+                },
+
+                {
+                    role: "user",
+                    content: `
+Project Title:
+${title}
+
+Vision:
+${vision}
+
+Thoughts:
+${thoughts}
+
+Status:
+${status}
+
+Project Type:
+${project_type}
+
+User Question:
+${prompt}
+`
+                }
+
+            ]
+
+        });
+
+        res.json({
+
+            reply: completion.choices[0].message.content
+
+        });
+
+    } catch (err) {
+
+        console.error(err);
+
+        res.status(500).json({
+
+            reply: "Something went wrong."
+
+        });
+
+    }
+
+});
 // Start Server
 app.listen(3000, () => {
     console.log("Server running on http://localhost:3000");
+});
+app.post("/ai",(req,res)=>{
+
 });

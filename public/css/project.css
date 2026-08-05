@@ -149,3 +149,72 @@ button{
     transform:translateY(-3px);
 
 }
+.ai-title{
+
+    margin-top:35px;
+    font-size:30px;
+
+}
+
+.ai-subtitle{
+
+    color:#b7bfd8;
+    margin-bottom:20px;
+    line-height:1.6;
+
+}
+
+.ai-input{
+
+    width:100%;
+    min-height:140px;
+
+    background:#172544;
+
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:16px;
+
+    color:white;
+
+    padding:18px;
+
+    font-size:15px;
+
+    resize:vertical;
+
+    outline:none;
+
+    transition:.3s;
+
+}
+
+.ai-input:focus{
+
+    border-color:#8ea7ff;
+
+    box-shadow:0 0 20px rgba(135,160,255,.25);
+
+}
+
+.ai-response{
+
+    margin-top:25px;
+
+    padding:20px;
+
+    background:rgba(255,255,255,.05);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:18px;
+
+    color:#eef3ff;
+
+    line-height:1.8;
+
+    white-space:pre-wrap;
+
+    min-height:80px;
+
+}
