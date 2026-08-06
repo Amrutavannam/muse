@@ -390,40 +390,7 @@ app.post("/profile", (req, res) => {
     );
 
 });
-//create project route 
-app.post("/create-project",(req,res)=>{
 
-const {user_email,title,description,status}=req.body;
-
-db.query(
-
-"INSERT INTO projects(user_email,title,description,status) VALUES(?,?,?,?)",
-
-[user_email,title,description,status],
-
-(err)=>{
-
-if(err){
-
-return res.status(500).json({
-
-message:"Failed"
-
-});
-
-}
-
-res.json({
-
-message:"Project Created Successfully"
-
-});
-
-}
-
-);
-
-});
 //ai route
 app.post("/ai", async (req, res) => {
 
