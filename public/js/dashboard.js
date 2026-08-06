@@ -1,10 +1,12 @@
-
+const API_URL =
+    window.location.hostname === "localhost"
+        ? "http://localhost:3000"
+        : "";
 const userEmail = localStorage.getItem("userEmail");
 
 async function loadProfile() {
 
-    const response = await fetch(
-        "http://localhost:3000/profile",
+    const response = await fetch(`${API_URL}/profile`,
         {
             method: "POST",
 
@@ -38,8 +40,7 @@ async function loadProfile() {
 
 async function loadProjects() {
 
-    const response = await fetch(
-        `http://localhost:3000/projects/${userEmail}`
+    const response = await fetch(`${API_URL}/projects/${userEmail}`
     );
 
     const projects = await response.json();

@@ -1,3 +1,7 @@
+const API_URL =
+    window.location.hostname === "localhost"
+        ? "http://localhost:3000"
+        : "";
 let selectedStatus = "Idea";
 let selectedType = "Personal";
 
@@ -90,8 +94,7 @@ form.addEventListener("submit", async (e) => {
 
     };
 
-    const response = await fetch(
-        "http://localhost:3000/projects",
+    const response = await fetch(`${API_URL}/projects`,
         {
 
             method: "POST",

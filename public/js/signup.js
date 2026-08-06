@@ -1,3 +1,7 @@
+const API_URL =
+    window.location.hostname === "localhost"
+        ? "http://localhost:3000"
+        : "";
 const signupForm = document.getElementById("signupForm");
 
 signupForm.addEventListener("submit", async (event) => {
@@ -17,7 +21,7 @@ signupForm.addEventListener("submit", async (event) => {
 
     try {
 
-        const response = await fetch("http://localhost:3000/signup", {
+        const response = await fetch(`${API_URL}/signup`, {
 
             method: "POST",
 

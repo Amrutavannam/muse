@@ -1,5 +1,9 @@
+const API_URL =
+    window.location.hostname === "localhost"
+        ? "http://localhost:3000"
+        : "";
 require("dotenv").config();
-
+const path = require("path");
 const Groq = require("groq-sdk");
 
 const groq = new Groq({
@@ -16,13 +20,14 @@ const app = express();
 // Middleware
 app.use(cors());
 app.use(express.json());
-
+app.use(express.static(path.join(__dirname, "public")));
 // Database Connection
 const db = mysql.createConnection({
-    host: "localhost",
-    user: "root",
-    password: "sql123",
-    database: "muse"
+    host: process.env.DB_HOST,
+    user: process.env.DB_USER,
+    password: process.env.DB_PASSWORD,
+    database: process.env.DB_NAME,
+    port: process.env.DB_PORT
 });
 
 // Connect Database
@@ -463,10 +468,31 @@ ${prompt}
     }
 
 });
-// Start Server
-app.listen(3000, () => {
-    console.log("Server running on http://localhost:3000");
+app.get("/", (req, res) => {
+    res.sendFile(path.join(__dirname, "views", "index.html"));
 });
-app.post("/ai",(req,res)=>{
+app.get("/login", (req, res) => {
+    res.sendFile(path.join(__dirname, "views", "login.html"));
+});
 
+app.get("/signup", (req, res) => {
+    res.sendFile(path.join(__dirname, "views", "signup.html"));
+});
+
+app.get("/dashboard", (req, res) => {
+    res.sendFile(path.join(__dirname, "views", "dashboard.html"));
+});
+
+app.get("/create-project", (req, res) => {
+    res.sendFile(path.join(__dirname, "views", "create-project.html"));
+});
+
+app.get("/project", (req, res) => {
+    res.sendFile(path.join(__dirname, "views", "project.html"));
+});
+// Start Server
+const PORT = process.env.PORT || 3000;
+
+app.listen(PORT, () => {
+    console.log(`Server running on port ${PORT}`);
 });

@@ -121,18 +121,6 @@ http://localhost:3000
 
 ---
 
-## 📸 Screens
-
-- Landing Page
-- Login
-- Signup
-- Dashboard
-- Create Project
-- Project Workspace
-- Muse AI Assistant
-
----
-
 ## 💡 Why MUSE?
 
 MUSE was built around a simple idea:

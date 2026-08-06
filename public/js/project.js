@@ -1,11 +1,14 @@
+const API_URL =
+    window.location.hostname === "localhost"
+        ? "http://localhost:3000"
+        : "";
 const params = new URLSearchParams(window.location.search);
 
 const projectId = params.get("id");
 
 async function loadProject() {
 
-    const response = await fetch(
-        `http://localhost:3000/project/${projectId}`
+    const response = await fetch(`${API_URL}/project/${projectId}`
     );
 
     const project = await response.json();
@@ -31,9 +34,7 @@ form.addEventListener("submit", async (e) => {
 
     e.preventDefault();
 
-    const response = await fetch(
-
-        `http://localhost:3000/project/${projectId}`,
+    const response = await fetch(`${API_URL}/project/${projectId}`,
 
         {
 
@@ -76,9 +77,7 @@ deleteBtn.addEventListener("click", async () => {
 
     if (!confirmDelete) return;
 
-    const response = await fetch(
-
-        `http://localhost:3000/project/${projectId}`,
+    const response = await fetch(`${API_URL}/project/${projectId}`,
 
         {
 
@@ -102,8 +101,7 @@ document
     const prompt =
         document.getElementById("aiPrompt").value;
 
-    const response = await fetch(
-        "http://localhost:3000/ai",
+    const response = await fetch(`${API_URL}/ai`,
         {
 
             method:"POST",
