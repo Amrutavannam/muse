@@ -1,7 +1,3 @@
-const API_URL =
-    window.location.hostname === "localhost"
-        ? "http://localhost:3000"
-        : "";
 require("dotenv").config();
 const path = require("path");
 const Groq = require("groq-sdk");
@@ -23,11 +19,11 @@ app.use(express.json());
 app.use(express.static(path.join(__dirname, "public")));
 // Database Connection
 const db = mysql.createConnection({
-    host: process.env.DB_HOST,
-    user: process.env.DB_USER,
-    password: process.env.DB_PASSWORD,
-    database: process.env.DB_NAME,
-    port: process.env.DB_PORT
+    host: process.env.MYSQLHOST,
+    user: process.env.MYSQLUSER,
+    password: process.env.MYSQLPASSWORD,
+    database: process.env.MYSQLDATABASE,
+    port: process.env.MYSQLPORT
 });
 
 // Connect Database
