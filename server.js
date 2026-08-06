@@ -29,12 +29,12 @@ const db = mysql.createConnection({
 // Connect Database
 db.connect((err) => {
     if (err) {
-        console.log("Database connection failed");
-        console.log(err);
+        console.error("❌ Database connection failed:");
+        console.error(err);
         return;
     }
 
-    console.log("Connected to MySQL");
+    console.log("✅ Connected to MySQL");
 });
 
 // Signup Route
