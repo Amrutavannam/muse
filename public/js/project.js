@@ -91,7 +91,7 @@ deleteBtn.addEventListener("click", async () => {
 
     alert(data.message);
 
-    window.location.href = "dashboard.html";
+    window.location.href = "/dashboard";
 
 });
 document

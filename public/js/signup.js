@@ -47,7 +47,7 @@ if (response.ok) {
 
     signupForm.reset();
 
-    window.location.href = "dashboard.html";
+    window.location.href = "/dashboard";
 
 } else {
 

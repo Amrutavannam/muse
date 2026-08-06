@@ -107,7 +107,7 @@ loadProjects();
 loadProfile();
 function editProject(id){
 
-    window.location.href = `project.html?id=${id}`;
+    window.location.href = `/project?id=${id}`;
 
 }
 const searchInput = document.getElementById("searchInput");
@@ -141,6 +141,6 @@ logoutBtn.addEventListener("click", () => {
 
     localStorage.removeItem("userEmail");
 
-    window.location.href = "index.html";
+    window.location.href = "/index";
 
 });

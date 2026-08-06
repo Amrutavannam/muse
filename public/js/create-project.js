@@ -111,6 +111,6 @@ form.addEventListener("submit", async (e) => {
 
     alert(data.message);
 
-    window.location.href = "dashboard.html";
+    window.location.href = "/dashboard";
 
 });

@@ -32,7 +32,7 @@ form.addEventListener("submit", async (e) => {
 
     if (response.ok) {
         localStorage.setItem("userEmail", email);
-        window.location.href = "dashboard.html";
+        window.location.href = "/dashboard";
     }
 
 });
