@@ -41,7 +41,39 @@ db.connect((err) => {
 
     console.log("✅ Connected to MySQL");
 });
-
+db.query(`
+CREATE TABLE IF NOT EXISTS users (
+    id INT NOT NULL AUTO_INCREMENT,
+    fullname VARCHAR(100) NOT NULL,
+    email VARCHAR(100) NOT NULL UNIQUE,
+    password VARCHAR(255) NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    PRIMARY KEY (id)
+);
+`, (err)=>{
+    if(err) console.log(err);
+    else console.log("Users table ready");
+});
+db.query(`
+CREATE TABLE IF NOT EXISTS projects (
+    id INT NOT NULL AUTO_INCREMENT,
+    user_email VARCHAR(255),
+    title VARCHAR(255),
+    status VARCHAR(50),
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    vision VARCHAR(255),
+    thoughts TEXT,
+    project_type VARCHAR(50),
+    github VARCHAR(255),
+    reference_link VARCHAR(255),
+    cover_image VARCHAR(255),
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    PRIMARY KEY(id)
+);
+`, (err)=>{
+    if(err) console.log(err);
+    else console.log("Projects table ready");
+});
 // Signup Route
 app.post("/signup", async (req, res) => {
 
