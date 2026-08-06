@@ -48,10 +48,12 @@ app.post("/signup", async (req, res) => {
         (err, result) => {
 
             if (err) {
-                return res.status(500).json({
-                    message: "Database Error"
-                });
-            }
+    console.error("Signup SELECT Error:", err);
+
+    return res.status(500).json({
+        message: err.message
+    });
+}
 
             if (result.length > 0) {
                 return res.status(400).json({
