@@ -5,6 +5,8 @@ MUSE is a calm workspace for developers, creators, and dreamers to capture ideas
 Instead of overwhelming productivity tools, MUSE focuses on one thing:
 turning ideas into real projects.
 
+🔗 **Live Demo:** [Open MUSE] (https://muse-production-d78d.up.railway.app/)
+
 ---
 
 ## ✨ Features
@@ -42,6 +44,16 @@ turning ideas into real projects.
 
 ---
 
+## 🚀 How to Use
+
+1. Sign up and log in.
+2. From the Dashboard, create and save a project.
+3. Open a project to modify or delete it.
+4. Use the AI Assistant for ideas and suggestions.
+5. Save your changes and return to the Dashboard.
+
+---
+
 ## 🛠 Tech Stack
 
 ### Frontend
@@ -54,12 +66,18 @@ turning ideas into real projects.
 - Express.js
 
 ### Database
+
 - MySQL
+- Railway MySQL — Production database
 
 ### AI
 - Groq API
 - Llama 3.3 70B Versatile
 
+### Deployment
+
+- Railway — Backend hosting & deployment
+- Railway MySQL — Production database
 ---
 
 ## 📂 Project Structure
