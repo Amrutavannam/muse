@@ -2,25 +2,20 @@
    Project Workspace
 ========================================== */
 
-.project-page{
-
-    min-height:100vh;
-
-    display:flex;
-
-    justify-content:center;
-
-    align-items:center;
-
-    padding:100px 20px;
-
+.project-page {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 100px 20px;
+    box-sizing: border-box;
 }
 
 .project-card{
 
     width:100%;
     max-width:900px;
-
+    box-sizing: border-box;
     background:rgba(255,255,255,.05);
 
     border:1px solid rgba(255,255,255,.08);
@@ -89,7 +84,8 @@
 
 .input-group input,
 .input-group textarea{
-
+    width: 100%;
+    box-sizing: border-box;
     padding:18px;
 
     border-radius:16px;
@@ -165,10 +161,9 @@ button{
 }
 
 .ai-input{
-
-    width:100%;
-    min-height:140px;
-
+    width: 100%;
+    box-sizing: border-box;
+    min-height: 140px;
     background:#172544;
 
     border:1px solid rgba(255,255,255,.08);
@@ -217,4 +212,144 @@ button{
 
     min-height:80px;
 
+}
+/* =====================================================
+   PROJECT WORKSPACE — MOBILE RESPONSIVE FIXES
+===================================================== */
+
+@media (max-width: 768px) {
+
+    .project-page {
+        width: 100%;
+        min-height: auto;
+        padding: 90px 14px 40px;
+        box-sizing: border-box;
+        align-items: flex-start;
+    }
+
+    .project-card {
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+        box-sizing: border-box;
+        padding: 28px 18px;
+        border-radius: 22px;
+    }
+
+    /* ---------- Back link ---------- */
+
+    .back-link {
+        font-size: 0.85rem;
+    }
+
+    /* ---------- Title ---------- */
+
+    .project-card h1 {
+        font-size: 2rem;
+        line-height: 1.2;
+        overflow-wrap: anywhere;
+    }
+
+    .subtitle {
+        font-size: 0.88rem;
+        line-height: 1.6;
+        margin-bottom: 28px;
+    }
+
+    /* ---------- Inputs ---------- */
+
+    .input-group {
+        margin-bottom: 20px;
+    }
+
+    .input-group label {
+        font-size: 0.88rem;
+    }
+
+    .input-group input,
+    .input-group textarea {
+        width: 100%;
+        box-sizing: border-box;
+        padding: 14px;
+        font-size: 0.88rem;
+        border-radius: 14px;
+    }
+
+    .input-group textarea {
+        min-height: 160px;
+    }
+
+    /* ---------- Buttons ---------- */
+
+    .project-card button,
+    .btn--danger {
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+        font-size: 0.88rem;
+    }
+
+    /* ---------- AI ---------- */
+
+    .ai-title {
+        font-size: 1.5rem;
+        line-height: 1.25;
+        margin-top: 30px;
+    }
+
+    .ai-subtitle {
+        font-size: 0.85rem;
+        line-height: 1.6;
+    }
+
+    .ai-input {
+        width: 100%;
+        min-height: 120px;
+        box-sizing: border-box;
+        padding: 14px;
+        font-size: 0.85rem;
+        line-height: 1.5;
+    }
+
+    .ai-response {
+        width: 100%;
+        box-sizing: border-box;
+        padding: 15px;
+        font-size: 0.82rem;
+        line-height: 1.6;
+
+        /* Don't let long AI responses break the page */
+        overflow-wrap: anywhere;
+        word-break: break-word;
+        white-space: pre-wrap;
+    }
+}
+
+
+/* =====================================================
+   EXTRA SMALL PHONES
+===================================================== */
+
+@media (max-width: 480px) {
+
+    .project-page {
+        padding: 75px 10px 30px;
+    }
+
+    .project-card {
+        padding: 22px 14px;
+    }
+
+    .project-card h1 {
+        font-size: 1.7rem;
+    }
+
+    .ai-title {
+        font-size: 1.35rem;
+    }
+
+    .ai-input,
+    .ai-response {
+        font-size: 0.8rem;
+    }
 }

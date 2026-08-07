@@ -866,3 +866,281 @@ section {
     width:100%;
 }
 }
+/* =====================================================
+   MUSE — MOBILE RESPONSIVE FIXES
+   No HTML changes
+===================================================== */
+
+@media (max-width: 768px) {
+
+    /* ---------- Global ---------- */
+
+    html,
+    body {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+
+    body {
+        font-size: 14px;
+    }
+
+    section {
+        width: 100%;
+        max-width: 100%;
+        padding: 70px 16px;
+    }
+
+    /* ---------- Navbar ---------- */
+
+    .navbar {
+        width: calc(100% - 24px);
+        max-width: none;
+        margin: 12px auto 0;
+        top: 12px;
+    }
+
+    .navbar__inner {
+        width: 100%;
+        padding: 10px 16px;
+    }
+
+    .logo {
+        font-size: 1rem;
+    }
+
+    .nav-toggle {
+        flex-shrink: 0;
+    }
+
+    /* Keep hamburger menu behavior exactly as it is */
+    .nav-links {
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+
+    /* ---------- Hero ---------- */
+
+    .hero {
+        min-height: auto;
+        padding-top: 80px;
+        padding-bottom: 60px;
+    }
+
+    .hero__inner {
+        width: 100%;
+        gap: 25px;
+    }
+
+    .hero__heading {
+        font-size: clamp(2rem, 9vw, 2.6rem);
+        line-height: 1.15;
+        margin-bottom: 16px;
+    }
+
+    .hero__subtext {
+        font-size: 0.92rem;
+        line-height: 1.6;
+        margin-bottom: 25px;
+    }
+
+    .hero__actions {
+        width: 100%;
+        gap: 12px;
+    }
+
+    .hero__actions .btn {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .hero__art {
+        width: 100%;
+        max-width: 100%;
+        height: 280px;
+        margin-top: 20px;
+        overflow: visible;
+    }
+
+    /* Prevent floating cards from pushing page width */
+    .mini-card {
+        max-width: 150px;
+        font-size: 0.68rem;
+        padding: 7px 10px;
+    }
+
+    .mini-card--1 {
+        right: 0;
+    }
+
+    .mini-card--2 {
+        left: 0;
+    }
+
+    .mini-card--3 {
+        right: 5%;
+    }
+
+    /* ---------- Section headings ---------- */
+
+    .section-heading {
+        width: 100%;
+        max-width: 100%;
+        margin-bottom: 35px;
+    }
+
+    .section-heading h2 {
+        font-size: 1.7rem;
+    }
+
+    /* ---------- Feature cards ---------- */
+
+    .features__grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .feature-card {
+        width: 100%;
+        padding: 25px 20px;
+    }
+
+    .feature-card h3 {
+        font-size: 1.05rem;
+    }
+
+    .feature-card p {
+        font-size: 0.88rem;
+    }
+
+    /* ---------- About ---------- */
+
+    .about__inner {
+        width: 100%;
+        gap: 30px;
+    }
+
+    .about__text h2 {
+        font-size: 1.7rem;
+    }
+
+    .about__body {
+        font-size: 0.9rem;
+    }
+
+    /* ---------- CTA ---------- */
+
+    .cta__card {
+        width: 100%;
+        padding: 45px 20px;
+        border-radius: 24px;
+    }
+
+    .cta__card h2 {
+        font-size: 1.7rem;
+        line-height: 1.25;
+        margin-bottom: 25px;
+    }
+
+    .cta__card .btn {
+        width: 100%;
+    }
+
+    /* ---------- Workflow ---------- */
+
+    .workflow__steps {
+        width: 100%;
+        gap: 15px;
+    }
+
+    .workflow-card {
+        width: 100%;
+        max-width: 320px;
+    }
+
+    /* ---------- Footer ---------- */
+
+    .footer {
+        padding: 50px 16px 25px;
+    }
+
+    .footer__inner {
+        width: 100%;
+        gap: 25px;
+    }
+
+    .footer__brand p {
+        font-size: 0.82rem;
+    }
+}
+
+
+/* =====================================================
+   EXTRA SMALL PHONES
+===================================================== */
+
+@media (max-width: 480px) {
+
+    section {
+        padding: 60px 14px;
+    }
+
+    .navbar {
+        width: calc(100% - 20px);
+    }
+
+    .navbar__inner {
+        padding: 9px 13px;
+    }
+
+    .hero {
+        padding-top: 70px;
+    }
+
+    .hero__heading {
+        font-size: 2rem;
+    }
+
+    .hero__subtext {
+        font-size: 0.88rem;
+    }
+
+    .hero__art {
+        height: 250px;
+    }
+
+    .mini-card {
+        max-width: 125px;
+        font-size: 0.62rem;
+    }
+
+    .btn {
+        padding: 13px 20px;
+        font-size: 0.88rem;
+    }
+
+    .btn--large {
+        padding: 15px 20px;
+        font-size: 0.9rem;
+    }
+}
+/* =====================================================
+GLOBAL MOBILE SAFETY
+===================================================== */
+
+@media (max-width: 768px) {
+
+    input,
+    textarea,
+    select,
+    button {
+        max-width: 100%;
+    }
+
+    img,
+    svg {
+        max-width: 100%;
+        height: auto;
+    }
+}

@@ -1,11 +1,9 @@
-.dashboard{
-
-max-width:1100px;
-
-margin:120px auto;
-
-padding:20px;
-
+.dashboard {
+    width: 100%;
+    max-width: 1100px;
+    margin: 120px auto 60px;
+    padding: 20px;
+    box-sizing: border-box;
 }
 
 .hero-card{
@@ -100,32 +98,22 @@ select:focus {
     border-color: #A5B4FC;
     box-shadow: 0 0 15px rgba(165,180,252,.25);
 }
-#projectsContainer{
-
-display:grid;
-
-grid-template-columns:repeat(auto-fill,minmax(300px,1fr));
-
-gap:25px;
-
-margin-top:35px;
-
+#projectsContainer {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 22px;
 }
-
-.project-card{
-
-background:rgba(255,255,255,.05);
-
-border:1px solid rgba(255,255,255,.08);
-
-border-radius:22px;
-
-padding:25px;
-
-backdrop-filter:blur(18px);
-
-transition:.3s;
-
+.project-card {
+    width: 100%;
+    min-width: 0;
+    background: rgba(255,255,255,.05);
+    border: 1px solid rgba(255,255,255,.08);
+    border-radius: 22px;
+    padding: 22px;
+    backdrop-filter: blur(15px);
+    transition: .3s;
+    cursor: pointer;
 }
 
 .project-card:hover{
@@ -185,31 +173,6 @@ width:100%;
 
 }
 
-#projectsContainer{
-
-    display:grid;
-
-    grid-template-columns:repeat(auto-fill,minmax(280px,1fr));
-
-    gap:22px;
-
-}
-
-.project-card{
-
-    background:rgba(255,255,255,.05);
-
-    border:1px solid rgba(255,255,255,.08);
-
-    border-radius:22px;
-
-    padding:22px;
-
-    transition:.3s;
-
-    backdrop-filter:blur(15px);
-
-}
 
 .project-card:hover{
 
@@ -363,4 +326,197 @@ font-size:1.2rem;
 
     box-shadow:0 0 18px rgba(165,180,252,.2);
 
+}
+/* =====================================================
+   DASHBOARD — MOBILE RESPONSIVE FIXES
+===================================================== */
+
+@media (max-width: 768px) {
+
+    .dashboard {
+        width: 100%;
+        max-width: 100%;
+        margin: 80px auto 40px;
+        padding: 16px;
+        box-sizing: border-box;
+    }
+
+    /* ---------- Hero ---------- */
+
+    .hero-card {
+        width: 100%;
+        box-sizing: border-box;
+        padding: 25px 20px;
+        margin-bottom: 25px;
+        border-radius: 22px;
+    }
+
+    .hero-card h1 {
+        font-size: 1.8rem;
+        line-height: 1.2;
+    }
+
+    .hero-card h2 {
+        font-size: 1.35rem;
+    }
+
+    .hero-card p {
+        font-size: 0.88rem;
+        line-height: 1.6;
+    }
+
+    /* ---------- Dashboard grid ---------- */
+
+    .dashboard-grid {
+        width: 100%;
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .glass-card {
+        width: 100%;
+        box-sizing: border-box;
+        padding: 22px 18px;
+        border-radius: 22px;
+        min-width: 0;
+    }
+
+    .glass-card h2 {
+        font-size: 1.3rem;
+    }
+
+    /* ---------- Projects header ---------- */
+
+    .projects-header {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        justify-content: flex-start;
+        gap: 15px;
+    }
+
+    .projects-header h2 {
+        font-size: 1.5rem;
+    }
+
+    .projects-header button,
+    .projects-header .btn {
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+
+    /* ---------- Project container ---------- */
+
+    #projectsContainer {
+        width: 100%;
+        max-width: 100%;
+        grid-template-columns: 1fr;
+        gap: 16px;
+        margin-top: 25px;
+        box-sizing: border-box;
+    }
+
+    /* ---------- Project cards ---------- */
+
+    .project-card {
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+        box-sizing: border-box;
+        padding: 20px;
+        border-radius: 20px;
+    }
+
+    .project-card h3 {
+        font-size: 1.15rem;
+        overflow-wrap: anywhere;
+    }
+
+    .project-card p {
+        font-size: 0.86rem;
+        overflow-wrap: anywhere;
+    }
+
+    .project-meta {
+        gap: 8px;
+    }
+
+    .badge {
+        font-size: 0.78rem;
+        padding: 6px 12px;
+    }
+
+    .continue {
+        font-size: 0.85rem;
+    }
+
+    /* ---------- Search ---------- */
+
+    .search-section {
+        width: 100%;
+        box-sizing: border-box;
+        margin: 20px 0;
+    }
+
+    .search-section input {
+        width: 100%;
+        box-sizing: border-box;
+        padding: 13px 15px;
+        font-size: 0.88rem;
+    }
+
+    /* ---------- Buttons ---------- */
+
+    .projects button,
+    .glass-card button {
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+}
+
+
+/* =====================================================
+   EXTRA SMALL PHONES
+===================================================== */
+
+@media (max-width: 480px) {
+
+    .dashboard {
+        margin-top: 65px;
+        padding: 12px;
+    }
+
+    .hero-card {
+        padding: 20px 16px;
+    }
+
+    .hero-card h1 {
+        font-size: 1.55rem;
+    }
+
+    .glass-card {
+        padding: 18px 15px;
+    }
+
+    .glass-card h2 {
+        font-size: 1.2rem;
+    }
+
+    .project-card {
+        padding: 18px;
+    }
+
+    .project-card h3 {
+        font-size: 1.05rem;
+    }
+
+    .project-card p {
+        font-size: 0.82rem;
+    }
+
+    #projectsContainer {
+        gap: 14px;
+    }
 }
